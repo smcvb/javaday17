@@ -30,14 +30,14 @@ public class ConferenceEventHandler {
         String speaker = event.getSpeaker();
         SpeakerView speakerView = speakerViewRepository.findOne(speaker);
 
+        List<String> talks;
         if (speakerView == null) {
-            List<String> talks = new ArrayList<>();
-            talks.add(event.getTalkTitle());
-            speakerViewRepository.save(new SpeakerView(speaker, talks));
+            talks = new ArrayList<>();
         } else {
-            List<String> talks = speakerView.getTalks();
-            talks.add(event.getTalkTitle());
-            speakerViewRepository.save(new SpeakerView(speaker, talks));
+            talks = speakerView.getTalks();
         }
+
+        talks.add(event.getTalkTitle());
+        speakerViewRepository.save(new SpeakerView(speaker, talks));
     }
 }
