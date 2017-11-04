@@ -12,9 +12,8 @@ public class ConferenceViewController {
     private final ConferenceViewRepository conferenceViewRepository;
     private final SpeakerViewRepository speakerViewRepository;
 
-    public ConferenceViewController(
-            ConferenceViewRepository conferenceViewRepository,
-            SpeakerViewRepository speakerViewRepository) {
+    public ConferenceViewController(ConferenceViewRepository conferenceViewRepository,
+                                    SpeakerViewRepository speakerViewRepository) {
         this.conferenceViewRepository = conferenceViewRepository;
         this.speakerViewRepository = speakerViewRepository;
     }
